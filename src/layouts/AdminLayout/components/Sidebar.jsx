@@ -11,23 +11,7 @@ const Sidebar = (props) => {
 
     const MenuItems = (data) => {
         return data.map(el => {
-            if (el.showTo.includes(role) && el.children?.length) {
-                return (
-                    <SubMenu
-                        key={el.title}
-                        title={
-                            <span>
-                                {el.icon || ''}
-                                <span>
-                                    {el.title}
-                                </span>
-                            </span>
-                        }
-                    >
-                        {MenuItems(el.children)}
-                    </SubMenu>
-                );
-            }
+            
             if (el.showTo.includes(role)) {
                 return <Menu.Item key={el.title}>
                     <Link to={el.url}>
